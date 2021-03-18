@@ -31,6 +31,7 @@ export class index extends Component {
     });
   };
 
+  // get data admin
   _getdataadmin = () => {
     database()
       .ref('/tb_register_guru')
