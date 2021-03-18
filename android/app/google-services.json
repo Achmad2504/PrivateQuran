@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "601938210775",
+    "firebase_url": "https://l-private-qur-an.firebaseio.com",
+    "project_id": "l-private-qur-an",
+    "storage_bucket": "l-private-qur-an.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:601938210775:android:824efb97ecc48c8391a592",
+        "android_client_info": {
+          "package_name": "com.privatequran"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "601938210775-d5beb8qhodsk3avlpeldqh52njobcocp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDJVhw1hPAFDpP-8iOpYrJm4sa2q4A5_dk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "601938210775-d5beb8qhodsk3avlpeldqh52njobcocp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
