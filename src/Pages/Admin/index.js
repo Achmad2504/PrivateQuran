@@ -17,7 +17,7 @@ export class index extends Component {
   state = {
     dataAdmin: [],
   };
-
+  //logout
   _logout = () => {
     removeToken().then(() => {
       Alert.alert('', 'Logout', [
