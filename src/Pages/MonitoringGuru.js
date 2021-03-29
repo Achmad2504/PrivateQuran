@@ -11,7 +11,7 @@ export class MonitoringGuru extends Component {
   state = {
     dataMurid: [],
   };
-
+  //mengambil data dari database pada tabel data murid
   _getdatamurid = async () => {
     const token = await getToken();
     database()

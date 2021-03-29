@@ -86,6 +86,7 @@ export class Register extends Component {
               (i) => i.username === this.state.username,
             );
             if (filterArr.length === 0) {
+              //proses pembuatan tabel pada database
               database()
                 .ref(`/tb_register_guru/${userid}`)
                 .set({
