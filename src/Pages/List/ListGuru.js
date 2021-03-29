@@ -16,6 +16,30 @@ import database from '@react-native-firebase/database';
 export class ListGuru extends Component {
   state = {
     loading: false,
+    jarak: 0,
+  };
+
+  toRad = (angle) => {
+    return (angle * Math.PI) / 180;
+  };
+
+  computeDistance = (lat, lng) => {
+    const latInRad = this.toRad(this.props.profil.latitude);
+    const longInRad = this.toRad(this.props.profil.longitude);
+    const prevLatInRad = this.toRad(lat);
+    const prevLongInRad = this.toRad(lng);
+
+    // In kilometers
+    const res =
+      6377.830272 *
+      Math.acos(
+        Math.sin(prevLatInRad) * Math.sin(latInRad) +
+          Math.cos(prevLatInRad) *
+            Math.cos(latInRad) *
+            Math.cos(longInRad - prevLongInRad),
+      );
+
+    return res;
   };
 
   _requestPemesanan = async () => {
@@ -23,13 +47,20 @@ export class ListGuru extends Component {
     const token = await getToken();
     const id = Date.now();
     this.setState({loading: true});
+    const body = {
+      nama: this.props.profil.nama,
+      alamat: this.props.profil.alamat,
+      phone: this.props.profil.phone,
+      jarak: this.computeDistance(
+        this.props.nana.latitude,
+        this.props.nana.longitude,
+      ),
+      dateRequest: id,
+    };
 
     database()
       .ref(`tb_request_pemesanan/${data.id}/${token.token}`)
-      .set({
-        nama: this.props.profil.nama,
-        dateRequest: id,
-      })
+      .set(body)
       .then(() => {
         this.props.navigation.goBack(null);
         ToastAndroid.show(

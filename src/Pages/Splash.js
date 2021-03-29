@@ -39,7 +39,6 @@ export class Splash extends Component {
                 <Image
                   style={styles.image}
                   source={require('../aseets/logo1.png')}></Image>
-                <Text style={styles.text1}>L - Private Qur'an</Text>
               </View>
             </ImageBackground>
           </View>
@@ -58,18 +57,15 @@ const styles = StyleSheet.create({
     width: '100%',
   },
   image: {
-    height: 90,
-    width: 130,
-    marginTop: 20,
+    height: 180,
+    width: 160,
+    marginTop: 40,
+    padding: 50,
   },
   child1: {
     alignItems: 'center',
     marginTop: 220,
   },
-  // header: {
-  //   fontSize: 24,
-  //   fontWeight: 'bold',
-  // },
   text1: {
     fontSize: 12,
     fontWeight: 'bold',

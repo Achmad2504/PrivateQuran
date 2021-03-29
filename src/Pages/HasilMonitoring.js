@@ -3,7 +3,6 @@ import {FlatList, View, Text, StyleSheet} from 'react-native';
 import {get} from 'react-native/Libraries/Utilities/PixelRatio';
 import {getToken} from '../constants';
 import {hasilmonitoring} from '../dummy';
-import ListHasil from './List/ListHasil';
 import database from '@react-native-firebase/database';
 import sortArray from 'sort-array';
 import Accordion from 'react-native-collapsible/Accordion';
@@ -70,12 +69,6 @@ export class HasilMonitoring extends Component {
 
     return (
       <View style={styles.body}>
-        {/* <FlatList
-          style={{marginBottom: 72}}
-          data={data}
-          renderItem={({item}) => <ListHasil rijal={item} />}
-          keyExtractor={(item) => item.id.toString()}
-        /> */}
         <Accordion
           sections={data}
           activeSections={this.state.activeSections}
