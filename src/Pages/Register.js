@@ -26,6 +26,7 @@ export class Register extends Component {
     konf_pass: '',
     phone: '',
     harga: '',
+    jadwal: '',
     loading: false,
     location: null,
     file: null,
@@ -54,6 +55,10 @@ export class Register extends Component {
     }
     if (this.state.password !== this.state.konf_pass) {
       alert('password tidak sama');
+      return;
+    }
+    if (this.state.jadwal !== this.state.jadwal) {
+      alert('jadwal tidak boleh kosong');
       return;
     }
     if (!this.state.location) {
@@ -95,6 +100,7 @@ export class Register extends Component {
                   password: this.state.password,
                   phone: this.state.phone,
                   harga: this.state.harga,
+                  jadwal: this.state.jadwal,
                   latitude: this.state.location.lat,
                   longitude: this.state.location.lng,
                   alamat: this.state.location.address,
@@ -179,6 +185,11 @@ export class Register extends Component {
                     value={this.state.harga}
                     onChangeText={(value) => this.setState({harga: value})}
                     placeholder={'Masukkan Harga'}
+                    style={styles.input}></TextInput>
+                  <TextInput
+                    value={this.state.jadwal}
+                    onChangeText={(value) => this.setState({jadwal: value})}
+                    placeholder={'Masukkan Jadwal mengajar (Hari)'}
                     style={styles.input}></TextInput>
                   <Choose
                     location={this.state.location}

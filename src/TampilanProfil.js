@@ -28,6 +28,7 @@ export class TampilanProfil extends Component {
     isEditEmail: false,
     isEditHarga: false,
     isEditStatus: false,
+    isEditjadwal: false,
     user: {
       username: '',
       password: '',
@@ -38,6 +39,7 @@ export class TampilanProfil extends Component {
       phone: '',
       id: '',
       status: '',
+      jadwal: '',
       file: '',
     },
     location: {
@@ -69,6 +71,7 @@ export class TampilanProfil extends Component {
             password: this.state.user.password,
             phone: this.state.user.phone,
             harga: this.state.user.harga,
+            jadwal: this.state.user.jadwal,
             latitude: this.state.user.lat,
             longitude: this.state.user.lng,
             alamat: this.state.user.alamat,
@@ -98,6 +101,7 @@ export class TampilanProfil extends Component {
         password: this.state.user.password,
         phone: this.state.user.phone,
         harga: this.state.user.harga,
+        jadwal: this.state.user.jadwal,
         latitude: loc.lat,
         longitude: loc.lng,
         alamat: loc.address,
@@ -151,6 +155,7 @@ export class TampilanProfil extends Component {
             status: p1.status,
             file: p1.file,
             harga: p1.harga,
+            jadwal: p1.jadwal,
           },
           location: {
             address: p1.alamat,
@@ -178,6 +183,7 @@ export class TampilanProfil extends Component {
       status: this.state.user.status,
       file: this.state.user.file,
       harga: this.state.user.harga,
+      jadwal: this.state.user.jadwal,
     };
     const data = {
       alamat: this.state.user.alamat,
@@ -190,6 +196,7 @@ export class TampilanProfil extends Component {
       status: this.state.user.status,
       file: this.state.user.file,
       harga: this.state.user.harga,
+      jadwal: this.state.user.jadwal,
     };
     const value = {
       level: 'guru',
@@ -204,6 +211,7 @@ export class TampilanProfil extends Component {
       status: this.state.user.status,
       file: this.state.user.file,
       harga: this.state.user.harga,
+      jadwal: this.state.user.jadwal,
     };
 
     database()
@@ -248,61 +256,6 @@ export class TampilanProfil extends Component {
               />
               <Text style={styles.text}>{this.state.user.nama}</Text>
             </View>
-
-            {/* {this.state.isEditAdress ? (
-          <View style={styles.body3}>
-            <TextInput
-              placeholder="Edit Alamat"
-              value={this.state.alamat}
-              onChangeText={(alamat) => this.setState({alamat})}
-            />
-            <View style={styles.body4}>
-              <TouchableOpacity style={styles.icon}>
-                <Icon name={'check'} />
-              </TouchableOpacity>
-              <TouchableOpacity
-                style={styles.icon}
-                onPress={() => this.setState({isEditAdress: false})}>
-                <Icon name={'close'} />
-              </TouchableOpacity>
-            </View>
-          </View>
-        ) : (
-          <View style={styles.body2}>
-            <Text>Alamat : Samata</Text>
-            <TouchableOpacity
-              onPress={() => this.setState({isEditAdress: true})}>
-              <Icon name={'edit'} />
-            </TouchableOpacity>
-          </View>
-        )} */}
-
-            {/* {this.state.isEditJK ? (
-          <View style={styles.body3}>
-            <TextInput
-              placeholder="Edit jenis kelamin"
-              value={this.state.edit_jk}
-              onChangeText={(edit_jk) => this.setState({edit_jk})}
-            />
-            <View style={styles.body4}>
-              <TouchableOpacity style={styles.icon}>
-                <Icon name={'check'} />
-              </TouchableOpacity>
-              <TouchableOpacity
-                style={styles.icon}
-                onPress={() => this.setState({isEditJK: false})}>
-                <Icon name={'close'} />
-              </TouchableOpacity>
-            </View>
-          </View>
-        ) : (
-          <View style={styles.body2}>
-            <Text>Jenis Kelamin :laki-laki</Text>
-            <TouchableOpacity onPress={() => this.setState({isEditJK: true})}>
-              <Icon name={'edit'} />
-            </TouchableOpacity>
-          </View>
-        )} */}
 
             {this.state.isEditNama ? (
               <View style={styles.body3}>
@@ -364,6 +317,37 @@ export class TampilanProfil extends Component {
                 <Text>No. Hp : {this.state.user?.phone}</Text>
                 <TouchableOpacity
                   onPress={() => this.setState({isEditNoHp: true})}>
+                  <Icon name={'edit'} />
+                </TouchableOpacity>
+              </View>
+            )}
+            {this.state.isEditjadwal ? (
+              <View style={styles.body3}>
+                <TextInput
+                  placeholder="Edit Jadwal"
+                  value={this.state.user.jadwal}
+                  onChangeText={(jadwal) =>
+                    this.setState({user: {...this.state.user, jadwal}})
+                  }
+                />
+                <View style={styles.body4}>
+                  <TouchableOpacity
+                    style={styles.icon}
+                    onPress={this._editData}>
+                    <Icon name={'check'} />
+                  </TouchableOpacity>
+                  <TouchableOpacity
+                    style={styles.icon}
+                    onPress={() => this.setState({isEditjadwal: false})}>
+                    <Icon name={'close'} />
+                  </TouchableOpacity>
+                </View>
+              </View>
+            ) : (
+              <View style={styles.body2}>
+                <Text>jadwal : {this.state.user?.jadwal}</Text>
+                <TouchableOpacity
+                  onPress={() => this.setState({isEditjadwal: true})}>
                   <Icon name={'edit'} />
                 </TouchableOpacity>
               </View>
@@ -448,61 +432,6 @@ export class TampilanProfil extends Component {
                 setLocation={(val) => this.setState({location: val})}
               />
             </View>
-            {/* {this.state.isEditEmail ? (
-          <View style={styles.body3}>
-            <TextInput
-              placeholder="Edit Email"
-              value={this.state.edit_email}
-              onChangeText={(edit_email) => this.setState({edit_email})}
-            />
-            <View style={styles.body4}>
-              <TouchableOpacity style={styles.icon}>
-                <Icon name={'check'} />
-              </TouchableOpacity>
-              <TouchableOpacity
-                style={styles.icon}
-                onPress={() => this.setState({isEditEmail: false})}>
-                <Icon name={'close'} />
-              </TouchableOpacity>
-            </View>
-          </View>
-        ) : (
-          <View style={styles.body2}>
-            <Text>Email : Nana@gmail.com</Text>
-            <TouchableOpacity
-              onPress={() => this.setState({isEditEmail: true})}>
-              <Icon name={'edit'} />
-            </TouchableOpacity>
-          </View>
-        )} */}
-
-            {/* {this.state.isEditHarga ? (
-          <View style={styles.body3}>
-            <TextInput
-              placeholder="Edit Harga"
-              value={this.state.edit_harga}
-              onChangeText={(edit_harga) => this.setState({edit_harga})}
-            />
-            <View style={styles.body4}>
-              <TouchableOpacity style={styles.icon}>
-                <Icon name={'check'} />
-              </TouchableOpacity>
-              <TouchableOpacity
-                style={styles.icon}
-                onPress={() => this.setState({isEditHarga: false})}>
-                <Icon name={'close'} />
-              </TouchableOpacity>
-            </View>
-          </View>
-        ) : (
-          <View style={styles.body2}>
-            <Text>Harga : RP.20.000</Text>
-            <TouchableOpacity
-              onPress={() => this.setState({isEditHarga: true})}>
-              <Icon name={'edit'} />
-            </TouchableOpacity>
-          </View>
-        )} */}
           </ScrollView>
         )}
       </SafeAreaView>

@@ -28,7 +28,7 @@ export class Login extends Component {
   _toRegister = () => {
     this.props.navigation.navigate('RegisterMurid');
   };
-  _dbGuru = () => {
+  _dbMurid = () => {
     if (!this.state.username) {
       alert('Username tidak boleh kosong');
       return;
@@ -110,7 +110,7 @@ export class Login extends Component {
                 style={styles.input}
               />
             </View>
-            <TouchableOpacity style={styles.btn} onPress={this._dbGuru}>
+            <TouchableOpacity style={styles.btn} onPress={this._dbMurid}>
               {this.state.loading ? (
                 <ActivityIndicator color={'black'} />
               ) : (

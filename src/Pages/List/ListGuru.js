@@ -23,6 +23,7 @@ export class ListGuru extends Component {
     return (angle * Math.PI) / 180;
   };
 
+  //computer distance adalah sebuah metode berfungsi untuk menghitung jarak
   computeDistance = (lat, lng) => {
     const latInRad = this.toRad(this.props.profil.latitude);
     const longInRad = this.toRad(this.props.profil.longitude);
@@ -51,6 +52,7 @@ export class ListGuru extends Component {
       nama: this.props.profil.nama,
       alamat: this.props.profil.alamat,
       phone: this.props.profil.phone,
+      jadwal: this.props.profil.jadwal,
       jarak: this.computeDistance(
         this.props.nana.latitude,
         this.props.nana.longitude,
@@ -106,6 +108,7 @@ export class ListGuru extends Component {
                 <Text>Alamat : {this.props.nana.alamat}</Text>
                 <Text>Harga : Rp. {this.props.nana?.harga}</Text>
                 <Text>No_Hp: {this.props.nana.phone}</Text>
+                <Text>jadwal: {this.props.nana.jadwal}</Text>
               </Body>
               <Right>
                 <TouchableOpacity

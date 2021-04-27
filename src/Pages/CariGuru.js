@@ -108,6 +108,7 @@ export default class CariGuru extends Component {
                 <Text>Harga : Rp. {detail?.harga}</Text>
                 <Text>No_Hp: {detail.phone}</Text>
                 <Text>Jarak: {detail.jarak.toFixed(2)} km</Text>
+                <Text>Jadwal: {detail.jadwal}</Text>
               </Body>
               <Right>
                 <TouchableOpacity
@@ -153,6 +154,7 @@ export default class CariGuru extends Component {
         alamat: this.profil.alamat,
         phone: this.profil.phone,
         jarak: data.jarak,
+        jadwal: this.profil.jadwal,
         dateRequest: id,
       })
       .then(() => {

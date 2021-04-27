@@ -125,11 +125,13 @@ export class RegisterMurid extends Component {
                     placeholder={'Masukan Nomor telepon'}
                     style={styles.input}></TextInput>
                   <TextInput
+                    secureTextEntry={true}
                     value={this.state.password}
                     onChangeText={(value) => this.setState({password: value})}
                     placeholder={'Masukan Password'}
                     style={styles.input}></TextInput>
                   <TextInput
+                    secureTextEntry={true}
                     value={this.state.konf_pass}
                     onChangeText={(value) => this.setState({konf_pass: value})}
                     placeholder={'Konfirmasi Password'}
