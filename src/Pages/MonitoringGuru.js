@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {FlatList, View} from 'react-native';
+import {FlatList, View, Image, Text} from 'react-native';
 import {dataMurid} from '../dummy';
 import ListMurid from './List/ListMurid';
 import database from '@react-native-firebase/database';
@@ -17,15 +17,16 @@ export class MonitoringGuru extends Component {
     database()
       .ref(`/tb_data_murid/${token.token}`)
       .on('value', (snap) => {
-        let arr = Object.values(snap.val());
-        let keys = Object.keys(snap.val());
-        for (const i in arr) {
-          for (const j in keys) {
-            if (i === j) arr[i]['id'] = keys[j];
+        if (snap.val()) {
+          let arr = Object.values(snap.val());
+          let keys = Object.keys(snap.val());
+          for (const i in arr) {
+            for (const j in keys) {
+              if (i === j) arr[i]['id'] = keys[j];
+            }
           }
+          this.setState({dataMurid: arr});
         }
-
-        this.setState({dataMurid: arr});
       });
   };
 
@@ -35,14 +36,37 @@ export class MonitoringGuru extends Component {
 
   render() {
     return (
-      <View>
-        <FlatList
-          data={this.state.dataMurid}
-          renderItem={({item}) => (
-            <ListMurid nana={item} onPress={() => this._toMonitoring(item)} />
-          )}
-          keyExtractor={(item) => item.username}
-        />
+      <View style={{flex: 1}}>
+        {this.state.dataMurid.length === 0 ? (
+          <View
+            style={{
+              backgroundColor: '#fff',
+              flex: 1,
+              alignItems: 'center',
+              paddingTop: 50,
+            }}>
+            <Image
+              source={require('../aseets/empty.png')}
+              style={{
+                width: 200,
+                height: 200,
+                resizeMode: 'stretch',
+                marginBottom: 20,
+              }}
+            />
+            <Text style={{fontWeight: 'bold', fontSize: 18}}>
+              Data Monitoring Masih kosong.
+            </Text>
+          </View>
+        ) : (
+          <FlatList
+            data={this.state.dataMurid}
+            renderItem={({item}) => (
+              <ListMurid nana={item} onPress={() => this._toMonitoring(item)} />
+            )}
+            keyExtractor={(item, index) => index.toString()}
+          />
+        )}
       </View>
     );
   }

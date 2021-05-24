@@ -40,7 +40,7 @@ export class ListNotifGuru extends Component {
               </TouchableOpacity>
               <TouchableOpacity
                 style={styles.btn2}
-                onPress={this.createTwoButtonCancel}>
+                onPress={this.props.onPresstolak}>
                 <Text>Cancel</Text>
               </TouchableOpacity>
             </Right>

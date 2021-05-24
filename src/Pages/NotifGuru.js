@@ -14,6 +14,7 @@ export class NotifGuru extends Component {
     DataMurid: [],
     loading: false,
     profil: null,
+    loading1: false,
   };
 
   _getProfilGuru = async () => {
@@ -54,6 +55,28 @@ export class NotifGuru extends Component {
       })
       .catch(() => {
         this.setState({loading: false});
+      });
+  };
+  _tolakpesan = async (data) => {
+    const token = await getToken();
+    const id = Date.now();
+    this.setState({loading1: true});
+    database()
+      .ref(`tb_request_pemesanan/${token.token}/${data.id}`)
+      .remove()
+      .then(() => {
+        this.props.navigation.goBack(null);
+        ToastAndroid.show('Pemesanan diterima', ToastAndroid.LONG);
+        this.setState({loading1: false});
+        database()
+          .ref(`tb_notif_murid/${data.id}/${id}`)
+          .set({
+            message: `Guru ${this.state.profil.nama} menolak pesanan Anda`,
+            dateAccept: id,
+          });
+      })
+      .catch(() => {
+        this.setState({loading1: false});
       });
   };
 
@@ -111,6 +134,7 @@ export class NotifGuru extends Component {
             <ListNotifGuru
               nana={item}
               onPress={() => this._terimapesan(item)}
+              onPresstolak={() => this._tolakpesan(item)}
             />
           )}
           keyExtractor={(item) => item.id.toString()}
