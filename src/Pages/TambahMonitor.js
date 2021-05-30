@@ -28,7 +28,7 @@ export class TambahMonitor extends Component {
         createAt: id,
       })
       .then(() => {
-        this.props.navigation.navigate('DaftarMonitoring');
+        this.props.navigation.navigate('DaftarMonitoringGuru');
         this.setState({loading: false});
       })
       .catch(() => {
@@ -41,7 +41,7 @@ export class TambahMonitor extends Component {
         isititle: this.state.isititle,
       })
       .then(() => {
-        this.props.navigation.navigate('DaftarMonitoring');
+        this.props.navigation.navigate('DaftarMonitoringGuru');
         this.setState({loading: false});
       })
       .catch(() => {

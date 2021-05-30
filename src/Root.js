@@ -163,47 +163,49 @@ function App() {
         <Stack.Screen
           name="DataMurid"
           component={DataMurid}
-          options={{headerShown: true}}
+          options={{title: 'Data Murid', headerShown: true}}
         />
         <Stack.Screen
           name="MonitoringGuru"
           component={MonitoringGuru}
-          options={{headerShown: true}}
+          options={{title: 'Laporan Penilaian Guru', headerShown: true}}
         />
         <Stack.Screen
-          name="DaftarMonitoring"
+          name="DaftarMonitoringGuru"
           component={DaftarMonitoringGuru}
-          options={({route}) => ({title: route.params.data.name})}
+          options={({route}) => ({
+            title: `Laporan Hasil Penilaian ${route.params.data.nama}`,
+          })}
         />
         <Stack.Screen
           name="TambahMonitor"
           component={TambahMonitor}
-          options={{headerShown: true}}
+          options={{title: 'Tambah Penilaian', headerShown: true}}
         />
         <Stack.Screen
           name="DataGuru"
           component={DataGuru}
-          options={{headerShown: true}}
+          options={{title: 'Data Guru', headerShown: true}}
         />
         <Stack.Screen
           name="HasilMonitoring"
           component={HasilMonitoring}
-          options={{headerShown: true}}
+          options={{title: 'Hasil Laporan Penilaian', headerShown: true}}
         />
         <Stack.Screen
           name="NotifGuru"
           component={NotifGuru}
-          options={{headerShown: true}}
+          options={{title: 'Notfikasi', headerShown: true}}
         />
         <Stack.Screen
           name="NotifMurid"
           component={NotifMurid}
-          options={{headerShown: true}}
+          options={{title: 'Notifikasi', headerShown: true}}
         />
         <Stack.Screen
           name="CariGuru"
           component={CariGuru}
-          options={{headerShown: true}}
+          options={{title: 'Pencarian Guru', headerShown: true}}
         />
         <Stack.Screen
           name="Lokasi"

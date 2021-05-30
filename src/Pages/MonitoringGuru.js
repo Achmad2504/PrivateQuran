@@ -6,7 +6,7 @@ import database from '@react-native-firebase/database';
 import {getToken} from '../constants';
 export class MonitoringGuru extends Component {
   _toMonitoring = (item) => {
-    this.props.navigation.navigate('DaftarMonitoring', {data: item});
+    this.props.navigation.navigate('DaftarMonitoringGuru', {data: item});
   };
   state = {
     dataMurid: [],

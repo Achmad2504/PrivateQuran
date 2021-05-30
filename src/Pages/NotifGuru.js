@@ -66,7 +66,7 @@ export class NotifGuru extends Component {
       .remove()
       .then(() => {
         this.props.navigation.goBack(null);
-        ToastAndroid.show('Pemesanan diterima', ToastAndroid.LONG);
+        ToastAndroid.show('Pemesanan ditolak', ToastAndroid.LONG);
         this.setState({loading1: false});
         database()
           .ref(`tb_notif_murid/${data.id}/${id}`)
