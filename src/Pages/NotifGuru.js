@@ -49,7 +49,7 @@ export class NotifGuru extends Component {
         database()
           .ref(`tb_notif_murid/${data.id}/${id}`)
           .set({
-            message: `Guru ${this.state.profil.nama} menerima pesanan Anda`,
+            message: `Ustadz/Ustadzah ${this.state.profil.nama} menerima pesanan Anda`,
             dateAccept: id,
           });
       })

@@ -25,7 +25,7 @@ export class Register extends Component {
     password: '',
     konf_pass: '',
     phone: '',
-    harga: '',
+    Jasa: '',
     jadwal: '',
     loading: false,
     location: null,
@@ -49,8 +49,8 @@ export class Register extends Component {
       alert('Password tidak boleh kosong');
       return;
     }
-    if (!this.state.harga) {
-      alert('Harga tidak boleh kosong');
+    if (!this.state.Jasa) {
+      alert('Jasa tidak boleh kosong');
       return;
     }
     if (this.state.password !== this.state.konf_pass) {
@@ -99,7 +99,7 @@ export class Register extends Component {
                   username: this.state.username,
                   password: this.state.password,
                   phone: this.state.phone,
-                  harga: this.state.harga,
+                  Jasa: this.state.Jasa,
                   jadwal: this.state.jadwal,
                   latitude: this.state.location.lat,
                   longitude: this.state.location.lng,
@@ -182,9 +182,9 @@ export class Register extends Component {
                     placeholder={'Konfirmasi Password'}
                     style={styles.input}></TextInput>
                   <TextInput
-                    value={this.state.harga}
-                    onChangeText={(value) => this.setState({harga: value})}
-                    placeholder={'Masukkan Harga'}
+                    value={this.state.Jasa}
+                    onChangeText={(value) => this.setState({Jasa: value})}
+                    placeholder={'Masukkan Jasa/Hari'}
                     style={styles.input}></TextInput>
                   <TextInput
                     value={this.state.jadwal}

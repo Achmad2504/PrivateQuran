@@ -191,61 +191,6 @@ export class TampilanProfilMurid extends Component {
               <Text style={styles.text}>{this.state.user.nama}</Text>
             </View>
 
-            {/* {this.state.isEditAdress ? (
-          <View style={styles.body3}>
-            <TextInput
-              placeholder="Edit Alamat"
-              value={this.state.alamat}
-              onChangeText={(alamat) => this.setState({alamat})}
-            />
-            <View style={styles.body4}>
-              <TouchableOpacity style={styles.icon}>
-                <Icon name={'check'} />
-              </TouchableOpacity>
-              <TouchableOpacity
-                style={styles.icon}
-                onPress={() => this.setState({isEditAdress: false})}>
-                <Icon name={'close'} />
-              </TouchableOpacity>
-            </View>
-          </View>
-        ) : (
-          <View style={styles.body2}>
-            <Text>Alamat : Samata</Text>
-            <TouchableOpacity
-              onPress={() => this.setState({isEditAdress: true})}>
-              <Icon name={'edit'} />
-            </TouchableOpacity>
-          </View>
-        )} */}
-
-            {/* {this.state.isEditJK ? (
-          <View style={styles.body3}>
-            <TextInput
-              placeholder="Edit jenis kelamin"
-              value={this.state.edit_jk}
-              onChangeText={(edit_jk) => this.setState({edit_jk})}
-            />
-            <View style={styles.body4}>
-              <TouchableOpacity style={styles.icon}>
-                <Icon name={'check'} />
-              </TouchableOpacity>
-              <TouchableOpacity
-                style={styles.icon}
-                onPress={() => this.setState({isEditJK: false})}>
-                <Icon name={'close'} />
-              </TouchableOpacity>
-            </View>
-          </View>
-        ) : (
-          <View style={styles.body2}>
-            <Text>Jenis Kelamin :laki-laki</Text>
-            <TouchableOpacity onPress={() => this.setState({isEditJK: true})}>
-              <Icon name={'edit'} />
-            </TouchableOpacity>
-          </View>
-        )} */}
-
             {this.state.isEditNama ? (
               <View style={styles.body3}>
                 <TextInput

@@ -70,7 +70,7 @@ export class TampilanProfil extends Component {
             username: this.state.user.username,
             password: this.state.user.password,
             phone: this.state.user.phone,
-            harga: this.state.user.harga,
+            Jasa: this.state.user.Jasa,
             jadwal: this.state.user.jadwal,
             latitude: this.state.user.lat,
             longitude: this.state.user.lng,
@@ -100,7 +100,7 @@ export class TampilanProfil extends Component {
         username: this.state.user.username,
         password: this.state.user.password,
         phone: this.state.user.phone,
-        harga: this.state.user.harga,
+        Jasa: this.state.user.Jasa,
         jadwal: this.state.user.jadwal,
         latitude: loc.lat,
         longitude: loc.lng,
@@ -154,7 +154,7 @@ export class TampilanProfil extends Component {
             password: p1.password,
             status: p1.status,
             file: p1.file,
-            harga: p1.harga,
+            Jasa: p1.Jasa,
             jadwal: p1.jadwal,
           },
           location: {
@@ -182,7 +182,7 @@ export class TampilanProfil extends Component {
       password: this.state.user.password,
       status: this.state.user.status,
       file: this.state.user.file,
-      harga: this.state.user.harga,
+      Jasa: this.state.user.Jasa,
       jadwal: this.state.user.jadwal,
     };
     const data = {
@@ -195,7 +195,7 @@ export class TampilanProfil extends Component {
       password: this.state.user.password,
       status: this.state.user.status,
       file: this.state.user.file,
-      harga: this.state.user.harga,
+      Jasa: this.state.user.Jasa,
       jadwal: this.state.user.jadwal,
     };
     const value = {
@@ -210,7 +210,7 @@ export class TampilanProfil extends Component {
       password: this.state.user.password,
       status: this.state.user.status,
       file: this.state.user.file,
-      harga: this.state.user.harga,
+      Jasa: this.state.user.Jasa,
       jadwal: this.state.user.jadwal,
     };
 

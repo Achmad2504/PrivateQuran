@@ -52,6 +52,7 @@ export class ListGuru extends Component {
       nama: this.props.profil.nama,
       alamat: this.props.profil.alamat,
       phone: this.props.profil.phone,
+      Jasa: this.props.profil.Jasa,
       jadwal: this.props.profil.jadwal,
       jarak: this.computeDistance(
         this.props.nana.latitude,
@@ -106,7 +107,7 @@ export class ListGuru extends Component {
               <Body>
                 <Text>Nama : {this.props.nana.nama}</Text>
                 <Text>Alamat : {this.props.nana.alamat}</Text>
-                <Text>Harga : Rp. {this.props.nana?.harga}</Text>
+                <Text>Jasa/Hari: Rp. {this.props.nana?.Jasa}</Text>
                 <Text>No_Hp: {this.props.nana.phone}</Text>
                 <Text>jadwal: {this.props.nana.jadwal}</Text>
               </Body>

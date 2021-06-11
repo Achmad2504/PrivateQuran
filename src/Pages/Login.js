@@ -21,10 +21,6 @@ export class Login extends Component {
     loading: false,
   };
 
-  _resetPassword = (email) => {
-    console.log(email);
-  };
-
   _toRegister = () => {
     this.props.navigation.navigate('Register');
   };

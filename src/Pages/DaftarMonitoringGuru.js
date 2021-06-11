@@ -77,7 +77,7 @@ export class DaftarMonitoringGuru extends Component {
     return (
       <View>
         <TouchableOpacity style={styles.btn} onPress={this._toTambah}>
-          <Text style={{color: white}}>Tambah Monitoring</Text>
+          <Text style={{color: white}}>Tambah Penilaian</Text>
         </TouchableOpacity>
         {/* <FlatList
           style={{marginBottom: 72}}

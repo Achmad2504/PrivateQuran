@@ -79,8 +79,8 @@ export class dbGuru extends Component {
           </Pressable>
           <Pressable onPress={this._MonitoringGuru}>
             <Image
-              source={require('../aseets/monitor.png')}
-              style={styles.img}></Image>
+              source={require('../aseets/laporan.png')}
+              style={styles.imglaporan}></Image>
           </Pressable>
           <Pressable onPress={this._toNotifGuru}>
             <Image
@@ -116,6 +116,13 @@ const styles = StyleSheet.create({
   img: {
     height: 150,
     width: 150,
+  },
+  imglaporan: {
+    height: 100,
+    width: 100,
+    marginTop: 30,
+    marginRight: 30,
+    marginLeft: 30,
   },
   icon: {
     position: 'absolute',

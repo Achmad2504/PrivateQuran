@@ -63,7 +63,7 @@ export class TambahMonitor extends Component {
             value={this.state.isititle}
             onChangeText={(value) => this.setState({isititle: value})}
             multiline={true}
-            placeholder={'Isi Monitoring'}
+            placeholder={'Isi Penilaian'}
             style={styles.text1}
           />
         </View>

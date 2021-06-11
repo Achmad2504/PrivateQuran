@@ -4,6 +4,7 @@ import {dataMurid} from '../dummy';
 import ListMurid from './List/ListMurid';
 import database from '@react-native-firebase/database';
 import {getToken} from '../constants';
+
 export class MonitoringGuru extends Component {
   _toMonitoring = (item) => {
     this.props.navigation.navigate('DaftarMonitoringGuru', {data: item});
