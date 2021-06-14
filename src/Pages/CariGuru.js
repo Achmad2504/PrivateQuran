@@ -18,7 +18,7 @@ import {getToken} from '../constants';
 import database from '@react-native-firebase/database';
 
 // Initialize the module (needs to be done only once)
-Geocoder.init('AIzaSyAiMlSENDB1Ubh8SJ0FbspBAvfwrblF_tA'); // use a valid API key
+Geocoder.init('AIzaSyDh0_cYDi7QnGOaXyax9jN2gdeD-X5jDR0'); // use a valid API key
 
 export default class CariGuru extends Component {
   data = this.props.route.params?.data;

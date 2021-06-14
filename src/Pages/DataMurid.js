@@ -12,7 +12,6 @@ export class DataMurid extends Component {
 
   _getdatamurid = async () => {
     const token = await getToken();
-
     database()
       .ref(`/tb_data_murid/${token.token}`)
       .on('child_added', (snap) => {

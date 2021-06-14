@@ -144,7 +144,7 @@ export class Register extends Component {
     return (
       <>
         <SafeAreaView style={styles.body}>
-          <View style={styles.container}>
+          <View style={styles.kolom}>
             <ImageBackground
               source={require('../aseets/splash.png')}
               style={styles.image}>
@@ -197,10 +197,10 @@ export class Register extends Component {
                     setLocation={(val) => this.setState({location: val})}
                   />
                 </View>
-                <View style={styles.child2}>
+                <View style={styles.upload}>
                   <Text style={styles.txfile}>Upload File : </Text>
                   <TouchableOpacity
-                    style={styles.btn}
+                    style={styles.browse}
                     onPress={this.attachFile}>
                     <Text>Browse</Text>
                   </TouchableOpacity>
@@ -218,7 +218,7 @@ export class Register extends Component {
                 <View>
                   <TouchableOpacity
                     onPress={this._registerguru}
-                    style={styles.btn1}>
+                    style={styles.registrasi}>
                     {this.state.loading ? (
                       <ActivityIndicator color={'black'} />
                     ) : (
@@ -239,7 +239,7 @@ const styles = StyleSheet.create({
   body: {
     flex: 1,
   },
-  container: {
+  kolom: {
     flex: 1,
     flexDirection: 'column',
   },
@@ -274,19 +274,19 @@ const styles = StyleSheet.create({
     fontSize: 9,
     paddingHorizontal: 35,
   },
-  btn: {
+  browse: {
     backgroundColor: '#2ECC71',
     paddingVertical: 5,
     paddingHorizontal: 20,
     borderRadius: 50,
     marginLeft: 100,
   },
-  child2: {
+  upload: {
     flex: 1,
     flexDirection: 'row',
     marginLeft: 10,
   },
-  btn1: {
+  registrasi: {
     backgroundColor: '#2ECC71',
     paddingVertical: 10,
     paddingHorizontal: 20,
