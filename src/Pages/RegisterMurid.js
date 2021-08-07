@@ -23,6 +23,7 @@ export class RegisterMurid extends Component {
     password: '',
     konf_pass: '',
     phone: '',
+    nama_ortu: '',
     loading: false,
     location: null,
   };
@@ -41,7 +42,7 @@ export class RegisterMurid extends Component {
         alamat: this.state.location.address,
       })
       .then(() => {
-        this.props.navigation.navigate('Login');
+        this.props.navigation.navigate('LoginMurid');
         this.setState({loading: false});
       })
       .catch(() => {
@@ -99,7 +100,7 @@ export class RegisterMurid extends Component {
     return (
       <>
         <SafeAreaView style={styles.body}>
-          <View style={styles.container}>
+          <View style={styles.kolom}>
             <ImageBackground
               source={require('../aseets/splash.png')}
               style={styles.image}>
@@ -145,7 +146,7 @@ export class RegisterMurid extends Component {
                 <View>
                   <TouchableOpacity
                     onPress={this._registerMurid}
-                    style={styles.btn1}>
+                    style={styles.registrasi}>
                     {this.state.loading ? (
                       <ActivityIndicator color={'black'} />
                     ) : (
@@ -166,7 +167,7 @@ const styles = StyleSheet.create({
   body: {
     flex: 1,
   },
-  container: {
+  kolom: {
     flex: 1,
     flexDirection: 'column',
   },
@@ -192,28 +193,7 @@ const styles = StyleSheet.create({
   child1: {
     padding: 20,
   },
-  txfile: {
-    paddingHorizontal: 20,
-    fontSize: 18,
-    fontWeight: 'bold',
-  },
-  txsurat: {
-    fontSize: 9,
-    paddingHorizontal: 35,
-  },
-  btn: {
-    backgroundColor: '#2ECC71',
-    paddingVertical: 5,
-    paddingHorizontal: 20,
-    borderRadius: 50,
-    marginLeft: 100,
-  },
-  child2: {
-    flex: 1,
-    flexDirection: 'row',
-    marginLeft: 10,
-  },
-  btn1: {
+  registrasi: {
     backgroundColor: '#2ECC71',
     paddingVertical: 10,
     paddingHorizontal: 20,
@@ -222,6 +202,27 @@ const styles = StyleSheet.create({
     borderRadius: 50,
     alignItems: 'center',
   },
+  // txfile: {
+  //   paddingHorizontal: 20,
+  //   fontSize: 18,
+  //   fontWeight: 'bold',
+  // },
+  // txsurat: {
+  //   fontSize: 9,
+  //   paddingHorizontal: 35,
+  // },
+  // btn: {
+  //   backgroundColor: '#2ECC71',
+  //   paddingVertical: 5,
+  //   paddingHorizontal: 20,
+  //   borderRadius: 50,
+  //   marginLeft: 100,
+  // },
+  // child2: {
+  //   flex: 1,
+  //   flexDirection: 'row',
+  //   marginLeft: 10,
+  // },
 });
 
 export default RegisterMurid;

@@ -79,12 +79,6 @@ export class DaftarMonitoringGuru extends Component {
         <TouchableOpacity style={styles.btn} onPress={this._toTambah}>
           <Text style={{color: white}}>Tambah Penilaian</Text>
         </TouchableOpacity>
-        {/* <FlatList
-          style={{marginBottom: 72}}
-          data={this.state.datamonitoring}
-          renderItem={({item}) => <ListMonitoringGuru nana={item} />}
-          keyExtractor={(item) => item.id.toString()}
-        /> */}
         <Accordion
           sections={data}
           activeSections={this.state.activeSections}

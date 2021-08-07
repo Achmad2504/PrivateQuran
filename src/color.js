@@ -15,6 +15,6 @@ export const hijau_terang = '#00FF00';
 export const abu_abu = '494848';
 export const pink_muda = 'FF7171';
 export const orange = '#D55910';
-export const button = '6698FF';
+export const button = '#6698FF';
 export const buttontext = '#348017';
 export const hijauarmy = '#86F19A';

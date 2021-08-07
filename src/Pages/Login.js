@@ -151,10 +151,11 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     padding: 10,
   },
-  child1: {
-    alignItems: 'center',
-    padding: 10,
-  },
+  // child1: {
+  //   alignItems: 'center',
+  //   padding: 10,
+  // },
+
   child2: {
     paddingHorizontal: 16,
   },
@@ -202,11 +203,6 @@ const styles = StyleSheet.create({
     color: blue,
     fontWeight: 'bold',
     fontSize: 16,
-  },
-  or: {
-    color: black,
-    fontWeight: 'bold',
-    fontSize: 14,
   },
 });
 

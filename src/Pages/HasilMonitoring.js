@@ -11,7 +11,7 @@ import Icon from 'react-native-vector-icons/Entypo';
 export class HasilMonitoring extends Component {
   state = {
     activeSections: [],
-    datamonitoring: [],
+    hasilmonitoring: [],
   };
 
   _getdatamonitoring = async () => {
@@ -21,7 +21,7 @@ export class HasilMonitoring extends Component {
       .ref(`/tb_hasil_monitoring/${token.token}`)
       .on('value', (snap) => {
         if (!snap.val()) {
-          this.setState({datamonitoring: []});
+          this.setState({hasilmonitoring: []});
         } else {
           let arr = Object.values(snap.val());
           let keys = Object.keys(snap.val());
@@ -30,7 +30,7 @@ export class HasilMonitoring extends Component {
               if (i === j) arr[i]['id'] = keys[j];
             }
           }
-          this.setState({datamonitoring: arr});
+          this.setState({hasilmonitoring: arr});
         }
       });
   };
@@ -62,7 +62,7 @@ export class HasilMonitoring extends Component {
     this.setState({activeSections});
   };
   render() {
-    const data = sortArray(this.state.datamonitoring, {
+    const data = sortArray(this.state.hasilmonitoring, {
       by: 'createAt',
       order: 'asc',
     });

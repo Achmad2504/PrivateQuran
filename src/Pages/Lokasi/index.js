@@ -19,6 +19,8 @@ export class Map extends Component {
     };
   }
 
+  //berfungsi untuk mendapatkan nilai lat dan lng dari alamt
+  //berfungsu untuk mengubah deskiripsi lokasi menjdi kordinatS
   _getLatLng = (address) => {
     Geocoder.from(address)
       .then((json) => {

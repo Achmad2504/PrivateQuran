@@ -15,7 +15,6 @@ export class NotifMurid extends Component {
 
   _getnotifmurid = async () => {
     const token = await getToken();
-
     database()
       .ref(`tb_notif_murid/${token.token}`)
       .on('value', (snap) => {
@@ -37,17 +36,17 @@ export class NotifMurid extends Component {
     this._getnotifmurid();
   };
 
-  _renderHeader = (section, _, isActive) => {
-    return (
-      <View style={[styles.header, !isActive && styles.borderStyle]}>
-        <Text style={styles.text1}>{section.title}</Text>
-        <Icon
-          name={isActive ? 'chevron-small-down' : 'chevron-small-right'}
-          size={20}
-        />
-      </View>
-    );
-  };
+  // _renderHeader = (section, _, isActive) => {
+  //   return (
+  //     <View style={[styles.header, !isActive && styles.borderStyle]}>
+  //       <Text style={styles.text1}>{section.title}</Text>
+  //       <Icon
+  //         name={isActive ? 'chevron-small-down' : 'chevron-small-right'}
+  //         size={20}
+  //       />
+  //     </View>
+  //   );
+  // };
 
   _updateSections = (activeSections) => {
     this.setState({activeSections});

@@ -274,61 +274,6 @@ export class TampilanProfilMurid extends Component {
                 setLocation={(val) => this.setState({location: val})}
               />
             </View>
-            {/* {this.state.isEditEmail ? (
-          <View style={styles.body3}>
-            <TextInput
-              placeholder="Edit Email"
-              value={this.state.edit_email}
-              onChangeText={(edit_email) => this.setState({edit_email})}
-            />
-            <View style={styles.body4}>
-              <TouchableOpacity style={styles.icon}>
-                <Icon name={'check'} />
-              </TouchableOpacity>
-              <TouchableOpacity
-                style={styles.icon}
-                onPress={() => this.setState({isEditEmail: false})}>
-                <Icon name={'close'} />
-              </TouchableOpacity>
-            </View>
-          </View>
-        ) : (
-          <View style={styles.body2}>
-            <Text>Email : Nana@gmail.com</Text>
-            <TouchableOpacity
-              onPress={() => this.setState({isEditEmail: true})}>
-              <Icon name={'edit'} />
-            </TouchableOpacity>
-          </View>
-        )} */}
-
-            {/* {this.state.isEditHarga ? (
-          <View style={styles.body3}>
-            <TextInput
-              placeholder="Edit Harga"
-              value={this.state.edit_harga}
-              onChangeText={(edit_harga) => this.setState({edit_harga})}
-            />
-            <View style={styles.body4}>
-              <TouchableOpacity style={styles.icon}>
-                <Icon name={'check'} />
-              </TouchableOpacity>
-              <TouchableOpacity
-                style={styles.icon}
-                onPress={() => this.setState({isEditHarga: false})}>
-                <Icon name={'close'} />
-              </TouchableOpacity>
-            </View>
-          </View>
-        ) : (
-          <View style={styles.body2}>
-            <Text>Harga : RP.20.000</Text>
-            <TouchableOpacity
-              onPress={() => this.setState({isEditHarga: true})}>
-              <Icon name={'edit'} />
-            </TouchableOpacity>
-          </View>
-        )} */}
           </ScrollView>
         )}
       </SafeAreaView>

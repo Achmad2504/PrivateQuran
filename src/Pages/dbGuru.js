@@ -75,7 +75,7 @@ export class dbGuru extends Component {
           <Pressable onPress={this._DataMurid}>
             <Image
               source={require('../aseets/daftarmurid.png')}
-              style={styles.img}></Image>
+              style={styles.img1}></Image>
           </Pressable>
           <Pressable onPress={this._MonitoringGuru}>
             <Image
@@ -114,6 +114,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   img: {
+    height: 150,
+    width: 150,
+  },
+  img1: {
     height: 150,
     width: 150,
   },

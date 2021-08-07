@@ -19,29 +19,29 @@ export class ListGuru extends Component {
     jarak: 0,
   };
 
-  toRad = (angle) => {
-    return (angle * Math.PI) / 180;
-  };
+  // toRad = (angle) => {
+  //   return (angle * Math.PI) / 180;
+  // };
 
-  //computer distance adalah sebuah metode berfungsi untuk menghitung jarak
-  computeDistance = (lat, lng) => {
-    const latInRad = this.toRad(this.props.profil.latitude);
-    const longInRad = this.toRad(this.props.profil.longitude);
-    const prevLatInRad = this.toRad(lat);
-    const prevLongInRad = this.toRad(lng);
+  // //computer distance adalah sebuah metode berfungsi untuk menghitung jarak
+  // computeDistance = (lat, lng) => {
+  //   const latInRad = this.toRad(this.props.profil.latitude);
+  //   const longInRad = this.toRad(this.props.profil.longitude);
+  //   const prevLatInRad = this.toRad(lat);
+  //   const prevLongInRad = this.toRad(lng);
 
-    // In kilometers
-    const res =
-      6377.830272 *
-      Math.acos(
-        Math.sin(prevLatInRad) * Math.sin(latInRad) +
-          Math.cos(prevLatInRad) *
-            Math.cos(latInRad) *
-            Math.cos(longInRad - prevLongInRad),
-      );
+  //   // In kilometers
+  //   const res =
+  //     6377.830272 *
+  //     Math.acos(
+  //       Math.sin(prevLatInRad) * Math.sin(latInRad) +
+  //         Math.cos(prevLatInRad) *
+  //           Math.cos(latInRad) *
+  //           Math.cos(longInRad - prevLongInRad),
+  //     );
 
-    return res;
-  };
+  //   return res;
+  // };
 
   _requestPemesanan = async () => {
     const data = this.props.nana;
@@ -109,7 +109,7 @@ export class ListGuru extends Component {
                 <Text>Alamat : {this.props.nana.alamat}</Text>
                 <Text>Jasa/Hari: Rp. {this.props.nana?.Jasa}</Text>
                 <Text>No_Hp: {this.props.nana.phone}</Text>
-                <Text>jadwal: {this.props.nana.jadwal}</Text>
+                <Text>Jadwal: {this.props.nana.jadwal}</Text>
               </Body>
               <Right>
                 <TouchableOpacity
